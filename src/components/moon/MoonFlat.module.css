@@ -1,0 +1,22 @@
+.frame {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.moon {
+  width: min(58%, 410px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #777a7b;
+  background-image:
+    radial-gradient(ellipse at 75% 48%, transparent 20%, rgba(4, 9, 14, 0.38) 76%, rgba(1, 5, 9, 0.85) 100%),
+    url("/textures/moon-color.jpg");
+  background-position: center, 50% 50%;
+  background-size: cover, 200% 100%;
+  box-shadow:
+    inset -28px -8px 45px rgba(0, 0, 0, 0.66),
+    inset 8px 5px 25px rgba(230, 238, 244, 0.18),
+    0 0 28px rgba(143, 197, 232, 0.12);
+}

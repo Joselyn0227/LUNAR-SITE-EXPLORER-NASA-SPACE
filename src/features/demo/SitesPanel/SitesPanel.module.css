@@ -1,0 +1,122 @@
+.panel {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 0.8rem;
+  border: 1px solid rgba(115, 177, 225, 0.15);
+  border-radius: 9px;
+  background: rgba(5, 12, 21, 0.58);
+}
+
+.sectionTitle,
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #8caec5;
+  font-size: 0.61rem;
+  letter-spacing: 0.11em;
+}
+
+.filters {
+  display: flex;
+  gap: 0.25rem;
+  margin-block: 0.7rem;
+}
+
+.filters button {
+  flex: 1;
+  padding: 0.34rem 0.25rem;
+  border: 1px solid rgba(113, 166, 203, 0.18);
+  border-radius: 5px;
+  color: #92aabd;
+  font-size: 0.62rem;
+  white-space: nowrap;
+}
+
+.filters button:hover,
+.filters .filterActive {
+  border-color: rgba(108, 196, 245, 0.55);
+  background: rgba(108, 196, 245, 0.14);
+  color: #d7efff;
+}
+
+.siteList {
+  display: grid;
+}
+
+.site {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.48rem 0.25rem;
+  border-bottom: 1px solid rgba(125, 172, 205, 0.09);
+  text-align: left;
+}
+
+.site:hover,
+.selected {
+  background: rgba(108, 196, 245, 0.06);
+}
+
+.thumbnail {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(202, 225, 240, 0.23);
+  border-radius: 50%;
+  background-image: url("/textures/moon-color.jpg");
+  background-position: center;
+  background-size: 200% 100%;
+  box-shadow: inset -6px -2px 9px rgba(0, 0, 0, 0.52);
+}
+
+.siteCopy {
+  min-width: 0;
+  display: grid;
+  gap: 0.05rem;
+}
+
+.siteCopy strong {
+  overflow: hidden;
+  color: #d4e2ed;
+  font-size: 0.69rem;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.siteCopy small {
+  color: #7d93a7;
+  font-size: 0.59rem;
+}
+
+.status {
+  flex: 0 0 auto;
+  width: 7px;
+  height: 7px;
+  margin-left: auto;
+  border-radius: 50%;
+}
+
+.excellent { background: #49dfa0; box-shadow: 0 0 8px rgba(73, 223, 160, 0.5); }
+.good { background: #f3b84f; }
+.review { background: #8695a3; }
+
+.legend {
+  margin-top: auto;
+  padding-top: 0.7rem;
+  color: #637e92;
+  font-size: 0.55rem;
+}
+
+@media (max-width: 1050px) {
+  .panel { grid-row: span 2; }
+}
+
+@media (max-width: 680px) {
+  .panel { grid-row: auto; }
+  .siteList { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 0.4rem; }
+  .legend { display: none; }
+}

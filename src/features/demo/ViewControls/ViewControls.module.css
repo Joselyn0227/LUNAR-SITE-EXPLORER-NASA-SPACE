@@ -1,0 +1,50 @@
+.controls {
+  position: absolute;
+  z-index: 7;
+  right: 0.7rem;
+  bottom: 0.7rem;
+  left: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  pointer-events: none;
+}
+
+.controls button,
+.clock { pointer-events: auto; }
+
+.viewGroup {
+  display: flex;
+  gap: 0.2rem;
+  padding: 0.2rem;
+  border: 1px solid rgba(115, 177, 225, 0.18);
+  border-radius: 6px;
+  background: rgba(4, 12, 20, 0.92);
+}
+
+.viewGroup button,
+.toggle,
+.live,
+.clock {
+  min-height: 29px;
+  padding: 0.32rem 0.55rem;
+  border: 1px solid rgba(115, 177, 225, 0.18);
+  border-radius: 5px;
+  color: #a4bacb;
+  font-size: 0.61rem;
+}
+
+.viewGroup button { min-width: 34px; border-color: transparent; }
+.viewGroup .active { border-color: rgba(126, 207, 240, 0.45); background: rgba(108, 196, 245, 0.24); color: #effaff; box-shadow: 0 0 12px rgba(108, 196, 245, 0.18); }
+.toggle { background: rgba(4, 12, 20, 0.92); }
+.toggleActive { color: #d4edff; border-color: rgba(108, 196, 245, 0.45); }
+.live { display: inline-flex; align-items: center; gap: 0.25rem; background: rgba(50, 15, 26, 0.82); color: #f1a2a9; }
+.liveActive { border-color: rgba(229, 104, 119, 0.4); }
+.clock { min-width: 94px; display: grid; place-items: center; background: rgba(4, 12, 20, 0.92); color: #9fb3c5; }
+
+@media (max-width: 680px) {
+  .controls { gap: 0.25rem; }
+  .viewGroup button, .toggle, .live, .clock { padding-inline: 0.35rem; font-size: 0.56rem; }
+  .clock { min-width: 78px; }
+}

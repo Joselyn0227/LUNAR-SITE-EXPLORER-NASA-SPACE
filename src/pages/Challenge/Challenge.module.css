@@ -1,0 +1,183 @@
+.page {
+  position: relative;
+  min-height: var(--page-min-h);
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 520px) minmax(0, 1fr);
+  gap: var(--space-12);
+  align-items: stretch;
+  min-height: var(--page-min-h);
+  padding-block: clamp(1.5rem, 5vh, 3rem);
+}
+
+.copy {
+  position: relative;
+  z-index: 2;
+  align-self: center;
+  display: grid;
+  gap: clamp(0.75rem, 2.4vh, 1.5rem);
+  justify-items: start;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.5rem, min(3.2vw, 5.4vh), 2.5rem);
+  line-height: 1.15;
+}
+
+.statement {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.statement p,
+.note {
+  max-width: 52ch;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.factors {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+.factor {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.factorIcon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border-strong);
+  background: rgba(108, 196, 245, 0.07);
+  color: var(--color-accent-soft);
+}
+
+.factorTitle {
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.factorText {
+  margin-top: 2px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+/* La Luna ocupa toda la sección, detrás del contenido */
+.moon {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Retícula decorativa del mockup */
+.reticle {
+  position: absolute;
+  right: 14%;
+  bottom: 26%;
+  width: 72px;
+  height: 72px;
+  border: 1px solid var(--color-border-strong);
+}
+
+.reticle::before,
+.reticle::after {
+  content: "";
+  position: absolute;
+  background: var(--color-accent);
+  opacity: 0.6;
+}
+
+.reticle::before { left: 50%; top: 20%; bottom: 20%; width: 1px; }
+.reticle::after { top: 50%; left: 20%; right: 20%; height: 1px; }
+
+.side {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+.coords {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 200px));
+  gap: var(--space-4);
+}
+
+.importance {
+  padding: var(--space-6);
+}
+
+.importanceTitle {
+  margin-bottom: var(--space-4);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.importanceList {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  color: var(--color-text);
+}
+
+.numText {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    gap: var(--space-8);
+    padding-block: var(--space-8);
+  }
+  .copy { align-self: start; }
+
+  /* En móvil la Luna pasa a ser un bloque entre el texto y las tarjetas */
+  .moon {
+    position: relative;
+    inset: auto;
+    height: min(92vw, 460px);
+    margin-inline: -1.5rem;
+  }
+  .reticle { display: none; }
+  .side { gap: var(--space-6); }
+  .coords { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 520px) {
+  .factors { grid-template-columns: 1fr; }
+  .importanceList { gap: var(--space-3); }
+}

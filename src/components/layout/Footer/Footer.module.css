@@ -1,0 +1,56 @@
+.footer {
+  border-top: 1px solid var(--color-border);
+  background: rgba(3, 6, 12, 0.72);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-height: 76px;
+  padding-block: var(--space-4);
+}
+
+.project,
+.challenge {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project {
+  color: var(--color-text-muted);
+}
+
+.challenge {
+  color: var(--color-text-dim);
+  text-align: center;
+}
+
+.github {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  transition: color var(--t-fast) var(--ease-out);
+}
+
+.github:hover {
+  color: var(--color-accent-soft);
+}
+
+@media (max-width: 600px) {
+  .inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: var(--space-6);
+  }
+
+  .challenge {
+    order: 1;
+    flex-basis: 100%;
+  }
+}
